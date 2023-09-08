@@ -36,16 +36,16 @@ variable "vcs_repo" {
   type        = map(string)
 }
 
-variable "workspace_vcs_directory" {
-  description = "Working directory to use in repo"
-  type        = string
-  default     = "root_directory"
-}
-
 variable "branch" {
   description = "(Optional) - VCS Repo branch"
   default     = null
   type        = string
+}
+
+variable "file_triggers_enabled" {
+  description = "file_triggers_enabled"
+  default     = true
+  type        = bool
 }
 
 variable "tags_regex" {
@@ -54,10 +54,10 @@ variable "tags_regex" {
   type        = string
 }
 
-variable "file_triggers_enabled" {
-  description = "(Optional) -  file_triggers_enabled"
-  default     = true
-  type        = bool
+variable "workspace_vcs_directory" {
+  description = "Working directory to use in repo"
+  type        = string
+  default     = "root_directory"
 }
 
 # Variables
@@ -130,6 +130,12 @@ variable "workspace_agents" {
   default     = false
 }
 
+variable "queue_all_runs" {
+  type        = bool
+  description = "queue all runs"
+  default     = true
+}
+
 variable "workspace_auto_apply" {
   type        = string
   description = "(Optional)  Setting if the workspace should automatically apply changes when a plan succeeds."
@@ -159,60 +165,3 @@ variable "remote_state_consumers" {
 #   description = "(Optional) Conditional that allows for RBAC policy to be created for the new workspaces"
 #   default = true
 # }
-
-# GitHub Variables
-
-variable "github_org" {
-  description = "GitHub organization name"
-  default     = "hashicorp-demo-lab"
-}
-
-variable "github_org_owner" {
-  description = "GitHub organization owner"
-  default     = "hashicorp-demo-lab"
-}
-
-variable "github_repo_name" {
-  description = "The name of the new repository"
-  type        = string
-  default     = ""
-}
-
-variable "github_repo_desc" {
-  description = "The description of the new repository"
-  type        = string
-  default     = "this repo was created by Terraform"
-}
-
-
-variable "github_repo_visibility" {
-  description = "github repo visibility"
-  type        = string
-  default     = "public"
-}
-
-variable "github_team_name" {
-  description = "github team name"
-  default     = "demo-team"
-}
-
-variable "github_template_owner" {
-  description = "The GitHub organization or user the template repository is owned by"
-  default     = "hashicorp-demo-lab"
-}
-
-variable "github_repo_permission" {
-  description = "Repository permission"
-  default     = "admin"
-}
-
-variable "github_template_repo" {
-  description = "The name of the repository template"
-  default     = "terraform-template"
-}
-
-variable "github_template_include_branches" {
-  description = "include all branches from github template"
-  type        = bool
-  default     = false
-}

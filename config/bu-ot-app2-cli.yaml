@@ -1,0 +1,6 @@
+organization: myorg
+workspace_name: bu-ot-app2
+create_project: false
+project_name:  workload
+create_repo: false
+create_variable_set: false

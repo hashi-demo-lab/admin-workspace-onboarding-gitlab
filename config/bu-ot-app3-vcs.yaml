@@ -1,0 +1,19 @@
+organization: myorg
+workspace_name: bu-ot-app3
+create_project: false
+create_repo: true
+project_name: workload
+file_triggers_enabled: true
+create_variable_set: false
+gitlab:
+  gitlab_org: myorg
+  gitlab_project_name: bu-ot-app3
+  gitlab_repo_desc: "created by terraform"
+  gitlab_template_name: tf-template-vcs-azure-future-app
+  gitlab_use_custom_template: true
+  gitlab_namespace_id: "70518537"
+  group_with_project_templates_id: "69399959"
+vcs_repo:
+  identifier: lab-operations-bu/vendors/hashicorp/BU-OT-tenant2/workload/bu-ot-app3
+  branch: main
+  oauth_token_id: ot-mH85sYimP2L7T15Y

@@ -1,0 +1,14 @@
+organization: myorg
+workspace_name: bu-ot-app5
+create_project: false
+create_repo: true
+project_name: workload
+file_triggers_enabled: false
+create_variable_set: false
+gitlab:
+  gitlab_project_name: "bu-ot-app5"
+  gitlab_repo_desc: "created by terraform"
+  gitlab_template_name: tf-template-cicd
+  gitlab_use_custom_template: true
+  gitlab_namespace_id: "70518537"
+  group_with_project_templates_id: "69399959"
